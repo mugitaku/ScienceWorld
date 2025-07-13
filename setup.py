@@ -40,6 +40,7 @@ setup(
     install_requires=open('requirements.txt').readlines(),
     extras_require={
         'webserver': open('requirements.txt').readlines() + ['pywebio'],
+        'dev': open('requirements-dev.txt').readlines(),
     },
     classifiers=[
         "Programming Language :: Python :: 3",
