@@ -54,7 +54,7 @@ class SimplificationOpenContainers extends Simplification(label = SIMPLIFICATION
     val allObjs = universe.getContainedObjectsAndPortalsRecursive(includeHidden = true, includePortalConnections = true)
     for (obj <- allObjs) {
       obj match {
-        case x:Portal => {
+        case x:EnvObject => {
           if ((x.propContainer.isDefined) && (x.propContainer.get.isContainer) && (x.propContainer.get.isClosable)) {    // If an object is a container that's closable
             x.propContainer.get.isOpen = true                                    // Open it
           }

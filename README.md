@@ -25,6 +25,31 @@ ScienceWorld is a text-based virtual environment centered around accomplishing t
 
 You can try ScienceWorld yourself via our [HuggingFace Space](https://huggingface.co/spaces/MarcCote/ScienceWorld) or read some of the [playthrough transcripts](https://sciworld.apps.allenai.org/explore).
 
+### Developers
+
+To compile the ScienceWorld JAR file, follow these steps:
+
+#### Prerequisites
+You will need to have `Java 1.8+` SDK installed on your system (shipped with most linux distributions). E.g. on Ubuntu, you can install it with:
+
+    sudo apt-get install openjdk-21-jdk
+
+Then, install sbt (Scala Build Tool) by running:
+```bash
+    echo "deb https://repo.scala-sbt.org/scalasbt/debian all main" | sudo tee /etc/apt/sources.list.d/sbt.list
+    echo "deb https://repo.scala-sbt.org/scalasbt/debian /" | sudo tee /etc/apt/sources.list.d/sbt_old.list
+    curl -sL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E40A89B84B2DF73499E82A75642AC823" | sudo tee /etc/apt/trusted.gpg.d/sbt.asc
+    sudo apt-get update
+    sudo apt-get install sbt
+```
+
+#### Building the JAR
+Once you have `sbt` installed, you can compile the ScienceWorld JAR file by running:
+```bash
+./simulator/package.sh
+```
+
+
 ### Citation
 ```
 @misc{scienceworld2022,
