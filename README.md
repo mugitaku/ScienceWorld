@@ -25,31 +25,6 @@ ScienceWorld is a text-based virtual environment centered around accomplishing t
 
 You can try ScienceWorld yourself via our [HuggingFace Space](https://huggingface.co/spaces/MarcCote/ScienceWorld) or read some of the [playthrough transcripts](https://sciworld.apps.allenai.org/explore).
 
-### Developers
-
-To compile the ScienceWorld JAR file, follow these steps:
-
-#### Prerequisites
-You will need to have `Java 1.8+` SDK installed on your system (shipped with most linux distributions). E.g. on Ubuntu, you can install it with:
-
-    sudo apt-get install openjdk-21-jdk
-
-Then, install sbt (Scala Build Tool) by running:
-```bash
-    echo "deb https://repo.scala-sbt.org/scalasbt/debian all main" | sudo tee /etc/apt/sources.list.d/sbt.list
-    echo "deb https://repo.scala-sbt.org/scalasbt/debian /" | sudo tee /etc/apt/sources.list.d/sbt_old.list
-    curl -sL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E40A89B84B2DF73499E82A75642AC823" | sudo tee /etc/apt/trusted.gpg.d/sbt.asc
-    sudo apt-get update
-    sudo apt-get install sbt
-```
-
-#### Building the JAR
-Once you have `sbt` installed, you can compile the ScienceWorld JAR file by running:
-```bash
-./simulator/package.sh
-```
-
-
 ### Citation
 ```
 @misc{scienceworld2022,
@@ -157,6 +132,26 @@ The tasks are listed in the table below along with their number of variations. E
 |  10-1 |                   mendelian-genetics-known-plant |  120 |
 |  10-2 |                 mendelian-genetics-unknown-plant |  480 |
 
+## Simplifications
+ScienceWorld supports a number of simplifications that can be applied to the environment to make it easier for agents to learn. These simplifications can be applied by passing the `--simplifications-preset` argument to the command line interface, or by passing the `simplifications` argument to the Python API.
+
+The available simplifications are:
+- `teleportAction`: Allows agents to instantly move to any location in the environment.
+- `openDoors`: All doors in the environment are open by default.
+- `selfWateringFlowerPots`: Automatically waters all flower pots in the environment.
+- `noElectricalAction`: Disables electrical actions, making it easier for agents to learn tasks that do not require electrical actions.
+- `openContainers`: All containers in the environment are open by default.
+
+The `--simplifications-preset` argument can be set to `easy` to apply the following simplifications:
+- `teleportAction`
+- `openDoors`
+- `selfWateringFlowerPots`
+- `noElectricalAction` (for non-connectivity tasks)
+
+> [!WARNING]
+> The `easy` preset differs from what is described in the paper (see Appendix B.5). The `openContainers` is not included in that preset and should manually be added if desired.
+
+
 # Baseline Agents
 **DRRN:** https://github.com/cognitiveailab/drrn-scienceworld
 
@@ -165,3 +160,29 @@ The tasks are listed in the table below along with their number of variations. E
 **CALM:** https://github.com/cognitiveailab/calm-scienceworld
 
 **Behavior Cloning and Decision Transformer:** https://github.com/cognitiveailab/t5-scienceworld
+
+
+
+# Developers
+
+To compile the ScienceWorld JAR file, follow these steps:
+
+### Prerequisites
+You will need to have `Java 1.8+` SDK installed on your system (shipped with most linux distributions). E.g. on Ubuntu, you can install it with:
+
+    sudo apt-get install openjdk-21-jdk
+
+Then, install sbt (Scala Build Tool) by running:
+```bash
+    echo "deb https://repo.scala-sbt.org/scalasbt/debian all main" | sudo tee /etc/apt/sources.list.d/sbt.list
+    echo "deb https://repo.scala-sbt.org/scalasbt/debian /" | sudo tee /etc/apt/sources.list.d/sbt_old.list
+    curl -sL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E40A89B84B2DF73499E82A75642AC823" | sudo tee /etc/apt/trusted.gpg.d/sbt.asc
+    sudo apt-get update
+    sudo apt-get install sbt
+```
+
+### Building the JAR
+Once you have `sbt` installed, you can compile the ScienceWorld JAR file by running:
+```bash
+./simulator/package.sh
+```

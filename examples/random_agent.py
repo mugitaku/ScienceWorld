@@ -183,7 +183,7 @@ def parse_args():
 
     simplification_group = parser.add_argument_group('Game simplifications')
     simplification_group.add_argument("--simplifications-preset", choices=['easy'],
-                                      help="Choose a preset among: 'easy' (apply all possible simplifications).")
+                                      help="Choose a preset among: 'easy' (apply teleportAction,openDoors,selfWateringFlowerPots and noElectricalAction for non connectivity tasks).")
     simplification_group.add_argument("--teleport", action="store_true",
                                       help="Lets agents instantly move to any location.")
     simplification_group.add_argument("--self-watering-plants", action="store_true",
