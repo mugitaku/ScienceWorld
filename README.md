@@ -99,38 +99,38 @@ pip install -e .
 # Tasks
 The tasks are listed in the table below along with their number of variations. Either the task ID or its name can be used to a task with `env.load()`.
 
-| Task ID | Task Name                                | # Variations |
+| Task ID (task_num)| Task Name                                | # Variations |
 |-------|----------------------------------------------------|------|
-|   1-1 |                                             boil |   30 |
-|   1-2 |                                             melt |   30 |
-|   1-3 |                                           freeze |   30 |
-|   1-4 |                    change-the-state-of-matter-of |   30 |
-|   2-1 |                                  use-thermometer |  540 |
-|   2-2 |            measure-melting-point-known-substance |  436 |
-|   2-3 |          measure-melting-point-unknown-substance |  300 |
-|   3-1 |                                  power-component |   20 |
-|   3-2 | power-component-renewable-vs-nonrenewable-energy |   20 |
-|   3-3 |                                test-conductivity |  900 |
-|   3-4 |          test-conductivity-of-unknown-substances |  600 |
-|   4-1 |                                find-living-thing |  300 |
-|   4-2 |                            find-non-living-thing |  300 |
-|   4-3 |                                       find-plant |  300 |
-|   4-4 |                                      find-animal |  300 |
-|   5-1 |                                       grow-plant |  126 |
-|   5-2 |                                       grow-fruit |  126 |
-|   6-1 |                                    chemistry-mix |   32 |
-|   6-2 |              chemistry-mix-paint-secondary-color |   36 |
-|   6-3 |               chemistry-mix-paint-tertiary-color |   36 |
-|   7-1 |                           lifespan-longest-lived |  125 |
-|   7-2 |                          lifespan-shortest-lived |  125 |
-|   7-3 |       lifespan-longest-lived-then-shortest-lived |  125 |
-|   8-1 |                           identify-life-stages-1 |   14 |
-|   8-2 |                           identify-life-stages-2 |   10 |
-|   9-1 |                   inclined-plane-determine-angle |  168 |
-|   9-2 |           inclined-plane-friction-named-surfaces | 1386 |
-|   9-3 |         inclined-plane-friction-unnamed-surfaces |  162 |
-|  10-1 |                   mendelian-genetics-known-plant |  120 |
-|  10-2 |                 mendelian-genetics-unknown-plant |  480 |
+|   1-1 (0)|                                             boil |   30 |
+|   1-2 (22)|                                             melt |   30 |
+|   1-3 (9)|                                           freeze |   30 |
+|   1-4 (1)|                    change-the-state-of-matter-of |   30 |
+|   2-1 (29)|                                  use-thermometer |  540 |
+|   2-2 (20)|            measure-melting-point-known-substance |  436 |
+|   2-3 (21)|          measure-melting-point-unknown-substance |  300 |
+|   3-1 (25)|                                  power-component |   20 |
+|   3-2 (26)| power-component-renewable-vs-nonrenewable-energy |   20 |
+|   3-3 (27)|                                test-conductivity |  900 |
+|   3-4 (28)|          test-conductivity-of-unknown-substances |  600 |
+|   4-1 (6)|                                find-living-thing |  300 |
+|   4-2 (7)|                            find-non-living-thing |  300 |
+|   4-3 (8)|                                       find-plant |  300 |
+|   4-4 (5)|                                      find-animal |  300 |
+|   5-1 (11)|                                       grow-plant |  126 |
+|   5-2 (10)|                                       grow-fruit |  126 |
+|   6-1 (2)|                                    chemistry-mix |   32 |
+|   6-2 (3)|              chemistry-mix-paint-secondary-color |   36 |
+|   6-3 (4)|               chemistry-mix-paint-tertiary-color |   36 |
+|   7-1 (17)|                           lifespan-longest-lived |  125 |
+|   7-2 (19)|                          lifespan-shortest-lived |  125 |
+|   7-3 (18)|       lifespan-longest-lived-then-shortest-lived |  125 |
+|   8-1 (12)|                           identify-life-stages-1 |   14 |
+|   8-2 (13)|                           identify-life-stages-2 |   10 |
+|   9-1 (14)|                   inclined-plane-determine-angle |  168 |
+|   9-2 (15)|           inclined-plane-friction-named-surfaces | 1386 |
+|   9-3 (16)|         inclined-plane-friction-unnamed-surfaces |  162 |
+|  10-1 (23)|                   mendelian-genetics-known-plant |  120 |
+|  10-2 (24)|                 mendelian-genetics-unknown-plant |  480 |
 
 ## Simplifications
 ScienceWorld supports a number of simplifications that can be applied to the environment to make it easier for agents to learn. These simplifications can be applied by passing the `--simplifications-preset` argument to the command line interface, or by passing the `simplifications` argument to the Python API.
